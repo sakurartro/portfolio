@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRON & RAZOR — Традиционный брутальный барбершоп в Краснодаре</title>
+    <meta name="description" content="Мужские стрижки со стальным характером, опасное бритьё и атмосфера мужского клуба. Рейтинг 5.0 на Яндекс.Картах. Онлайн-запись со скидкой 20% на первый визит.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        oswald: ['Oswald', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        amber: {
+                            500: '#d97706',
+                            600: '#b45309',
+                            700: '#92400e',
+                            glow: 'rgba(217, 119, 6, 0.35)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .vintage-border {
+            border: 1px solid rgba(217, 119, 6, 0.25);
+        }
+        .vintage-border-gold {
+            border: 1px solid #d97706;
+        }
+        .wood-texture {
+            background-color: #121316;
+            background-image: radial-gradient(rgba(217, 119, 6, 0.05) 1px, transparent 0);
+            background-size: 28px 28px;
+        }
+        .leather-card {
+            background: linear-gradient(145deg, #18191f, #131418);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .leather-card:hover {
+            border-color: rgba(217, 119, 6, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-[#0f1013] text-stone-200 antialiased font-sans selection:bg-amber-500 selection:text-black">
+
+    <!-- Top Outreach / Demo Switcher Bar -->
+    <div class="bg-black/90 text-stone-300 py-2 px-4 text-xs sticky top-0 z-50 border-b border-stone-800 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+                <span class="font-bold text-white tracking-wide">ДЕМО ВАРИАЦИЯ #1: OLD SCHOOL & BRUTAL</span>
+                <span class="text-stone-500 hidden md:inline">| Для традиционных барбершопов и мужских клубов</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <label class="text-stone-400 text-[11px] hidden sm:inline">Концепция:</label>
+                <select onchange="if(this.value) window.location.href=this.value" class="bg-stone-900 border border-stone-700 text-stone-200 text-xs rounded-lg px-2.5 py-1 focus:ring-1 focus:ring-amber-500 outline-none">
+                    <option value="01_heritage.html" selected>1. Олдскул & Брутал (Iron & Razor)</option>
+                    <option value="02_luxury.html">2. Премиум Люкс (Royal Cuts VIP)</option>
+                    <option value="03_urban.html">3. Стритвир & Нео (Cult 13)</option>
+                    <option value="04_family.html">4. Семейный Лофт (Family & Bro)</option>
+                    <option value="05_speed.html">5. Хай-Тек Экспресс (Precision Lab)</option>
+                </select>
+                <a href="index.html" class="px-2.5 py-1 rounded-lg bg-amber-500 text-stone-950 font-bold hover:bg-amber-400 transition-colors">
+                    Хаб презентации →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="bg-[#121317]/95 backdrop-blur-md sticky top-[37px] z-40 border-b border-stone-800/80 transition-all">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between gap-4">
+            <!-- Brand Logo & Name -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-white shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform border border-amber-500/30">
+                    <svg class="w-7 h-7 text-stone-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879a3 3 0 11-4.242-4.242L12 5m0 7l-7 7m7-7l7-7"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="block font-oswald text-xl sm:text-2xl font-bold tracking-wider text-white uppercase">IRON & RAZOR</span>
+                    <span class="block text-[11px] text-amber-500/90 font-medium tracking-widest uppercase">Traditional Barbershop</span>
+                </div>
+            </a>
+
+            <!-- Nav Links (Desktop) -->
+            <nav class="hidden md:flex items-center gap-7 text-xs font-semibold tracking-wider uppercase text-stone-300">
+                <a href="#services" class="hover:text-amber-500 transition-colors">Прайс & Комбо</a>
+                <a href="#face-quiz" class="hover:text-amber-500 transition-colors flex items-center gap-1.5 text-amber-400">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
+                    Подбор стрижки
+                </a>
+                <a href="#gallery" class="hover:text-amber-500 transition-colors">Работы</a>
+                <a href="#masters" class="hover:text-amber-500 transition-colors">Мастера</a>
+                <a href="#reviews" class="hover:text-amber-500 transition-colors">Отзывы</a>
+                <a href="#contacts" class="hover:text-amber-500 transition-colors">Контакты</a>
+            </nav>
+
+            <!-- Action CTAs -->
+            <div class="flex items-center gap-3">
+                <a href="tel:+79180366469" class="hidden lg:flex flex-col text-right">
+                    <span class="text-xs font-bold text-white hover:text-amber-500 transition-colors">+7 (918) 036-64-69</span>
+                    <span class="text-[10px] text-stone-400">ул. Красная, 149</span>
+                </a>
+                <button onclick="openBookingModal('Комплекс «Стрижка + Борода»', 'Любой мастер')" class="px-5 py-2.5 rounded-lg font-oswald font-bold uppercase tracking-wider text-xs sm:text-sm text-stone-950 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 transition-all shadow-lg shadow-amber-500/20 active:scale-95">
+                    Онлайн-запись (-20%)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative overflow-hidden pt-12 pb-20 wood-texture border-b border-stone-800">
+        <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-amber-600/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-amber-500/10 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column -->
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-900 border border-amber-500/30 text-amber-400 text-xs font-semibold mb-6">
+                        <svg class="w-4 h-4 fill-current text-amber-500" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <span>Рейтинг 5.0 на Яндекс.Картах • 275+ отзывов</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-oswald font-bold tracking-tight text-white uppercase leading-[1.08] mb-6">
+                        Мужские стрижки со стальным характером & опасное бритьё
+                    </h1>
+
+                    <p class="text-stone-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl">
+                        Никакого конвейера и гламура. Честная атмосфера мужского клуба: классические фейды, горячие компрессы, опасная бритва, крепкий кофе и крафт.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                        <button onclick="openBookingModal('Мужская стрижка', 'Любой мастер')" class="px-7 py-4 rounded-xl font-oswald font-bold text-sm uppercase tracking-wider text-black bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 transition-all shadow-xl shadow-amber-500/25 flex items-center justify-center gap-2 group">
+                            <span>Записаться со скидкой 20%</span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                        <a href="#face-quiz" class="px-7 py-4 rounded-xl font-oswald font-semibold text-sm uppercase tracking-wider text-stone-200 border border-stone-700 hover:border-amber-500 hover:text-amber-400 transition-all bg-stone-900/60 flex items-center justify-center gap-2">
+                            <span>Пройти тест формы лица (30 сек)</span>
+                        </a>
+                    </div>
+
+                    <!-- Metrics -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-stone-800">
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-oswald font-bold text-amber-500">14 000+</span>
+                            <span class="text-[11px] text-stone-400 uppercase tracking-wider">Стрижек сделано</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-oswald font-bold text-white">45 мин</span>
+                            <span class="text-[11px] text-stone-400 uppercase tracking-wider">Идеальный тайминг</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-oswald font-bold text-amber-500">100%</span>
+                            <span class="text-[11px] text-stone-400 uppercase tracking-wider">СанПиН стерилизация</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Hero Visual -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-2xl overflow-hidden border-2 border-amber-500/30 shadow-2xl shadow-black/80 group">
+                        <img src="assets/hero_heritage.jpg" alt="Брутальный барбершоп" class="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+                        
+                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-stone-950/85 backdrop-blur-md border border-stone-700/80">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="text-xs text-amber-400 font-semibold tracking-wider uppercase">Спецпредложение недели</div>
+                                    <div class="font-oswald text-lg text-white uppercase">Комплекс «Стрижка + Борода»</div>
+                                    <div class="text-xs text-stone-400">Включает мытье головы, компресс и стайлинг</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xs line-through text-stone-500">2 400 ₽</div>
+                                    <div class="text-xl font-bold font-oswald text-amber-400">1 920 ₽</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE FACE QUIZ (Лид-магнит) -->
+    <section id="face-quiz" class="py-16 bg-[#14151a] border-b border-stone-800">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <span class="text-xs font-oswald uppercase tracking-widest text-amber-500 px-3 py-1 rounded bg-amber-500/10 border border-amber-500/20">Интерактивный тест</span>
+                <h2 class="text-2xl sm:text-4xl font-oswald font-bold uppercase text-white mt-3">Не знаешь, какая стрижка тебе идет?</h2>
+                <p class="text-stone-400 text-sm max-w-xl mx-auto mt-2">Ответь на 3 вопроса о форме лица и типе волос — получи экспертную рекомендацию мастера и купон на -20%.</p>
+            </div>
+
+            <div class="leather-card rounded-2xl p-6 sm:p-8 border border-stone-800 relative shadow-xl">
+                <!-- Step Indicator -->
+                <div class="flex items-center justify-between mb-8 pb-4 border-b border-stone-800 text-xs font-semibold text-stone-400">
+                    <span id="quiz-step-title" class="text-amber-400 font-oswald uppercase tracking-wider text-sm">Шаг 1 из 3: Форма лица</span>
+                    <span id="quiz-progress-text">33% завершено</span>
+                </div>
+
+                <!-- Question Container -->
+                <div id="quiz-content">
+                    <div id="step-1" class="space-y-4">
+                        <label class="block text-sm font-medium text-stone-300">Какая форма твоего лица ближе всего?</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <button onclick="selectQuizOption('shape', 'Овальное', 1)" class="quiz-btn p-4 rounded-xl border border-stone-700 bg-stone-900/80 hover:border-amber-500 text-center transition-all">
+                                <span class="block text-2xl mb-1">🥚</span>
+                                <span class="text-xs font-semibold text-white">Овальное</span>
+                            </button>
+                            <button onclick="selectQuizOption('shape', 'Квадратное', 1)" class="quiz-btn p-4 rounded-xl border border-stone-700 bg-stone-900/80 hover:border-amber-500 text-center transition-all">
+                                <span class="block text-2xl mb-1">🔲</span>
+                                <span class="text-xs font-semibold text-white">Квадратное</span>
+                            </button>
+                            <button onclick="selectQuizOption('shape', 'Круглое', 1)" class="quiz-btn p-4 rounded-xl border border-stone-700 bg-stone-900/80 hover:border-amber-500 text-center transition-all">
+                                <span class="block text-2xl mb-1">⚪</span>
+                                <span class="text-xs font-semibold text-white">Круглое</span>
+                            </button>
+                            <button onclick="selectQuizOption('shape', 'Вытянутое', 1)" class="quiz-btn p-4 rounded-xl border border-stone-700 bg-stone-900/80 hover:border-amber-500 text-center transition-all">
+                                <span class="block text-2xl mb-1">📏</span>
+                                <span class="text-xs font-semibold text-white">Вытянутое</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="step-2" class="space-y-4 hidden">
+                        <label class="block text-sm font-medium text-stone-300">Какой у тебя тип и густота волос?</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <button onclick="selectQuizOption('hair', 'Прямые и густые', 2)" class="quiz-btn p-4 rounded-xl border border-stone-700 bg-stone-900/80 hover:border-amber-500 text-left transition-all">
+                                <span class="font-bold text-sm text-white block">Прямые & густые</span>
+                                <span class="text-xs text-stone-400">Держат объем, любят текстуру</span>
+                            </button>
+                            <button onclick="selectQuizOption('hair', 'Тонкие или мягкие', 2)" class="quiz-btn p-4 rounded-xl border border-stone-700 bg-stone-900/80 hover:border-amber-500 text-left transition-all">
+                                <span class="font-bold text-sm text-white block">Тонкие / мягкие</span>
+                                <span class="text-xs text-stone-400">Нужен визуальный объем и кроп</span>
+                            </button>
+                            <button onclick="selectQuizOption('hair', 'Волнистые или жесткие', 2)" class="quiz-btn p-4 rounded-xl border border-stone-700 bg-stone-900/80 hover:border-amber-500 text-left transition-all">
+                                <span class="font-bold text-sm text-white block">Волнистые / жесткие</span>
+                                <span class="text-xs text-stone-400">Требуют четких контуров и фейда</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="step-3" class="space-y-4 hidden">
+                        <label class="block text-sm font-medium text-stone-300">Что с растительностью на лице?</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <button onclick="finishQuiz('Густая борода')" class="quiz-btn p-4 rounded-xl border border-stone-700 bg-stone-900/80 hover:border-amber-500 text-left transition-all">
+                                <span class="font-bold text-sm text-white block">Полная борода</span>
+                                <span class="text-xs text-stone-400">Нужно моделирование и четкий контур</span>
+                            </button>
+                            <button onclick="finishQuiz('Короткая щетина')" class="quiz-btn p-4 rounded-xl border border-stone-700 bg-stone-900/80 hover:border-amber-500 text-left transition-all">
+                                <span class="font-bold text-sm text-white block">Короткая щетина</span>
+                                <span class="text-xs text-stone-400">Легкая ухоженная щетина 3-5 мм</span>
+                            </button>
+                            <button onclick="finishQuiz('Гладкое бритье')" class="quiz-btn p-4 rounded-xl border border-stone-700 bg-stone-900/80 hover:border-amber-500 text-left transition-all">
+                                <span class="font-bold text-sm text-white block">Гладко бреюсь</span>
+                                <span class="text-xs text-stone-400">Чистое бритье опасной бритвой</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Result Block -->
+                    <div id="step-result" class="hidden text-center py-4 space-y-6">
+                        <div class="w-16 h-16 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center mx-auto text-2xl font-bold">
+                            ✓
+                        </div>
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-amber-500 font-oswald font-bold">Персональный результат</span>
+                            <h3 id="result-haircut-title" class="text-2xl sm:text-3xl font-oswald font-bold text-white uppercase mt-1">Твой стиль: Low Fade + Текстурный Кроп</h3>
+                            <p id="result-haircut-desc" class="text-sm text-stone-300 max-w-lg mx-auto mt-2">Идеально подчеркнет геометрию лица, уберет лишний объем на висках и создаст мужественный контур подбородка.</p>
+                        </div>
+                        <div class="inline-block p-4 rounded-xl bg-stone-900 border border-amber-500/40 text-center">
+                            <span class="text-xs text-stone-400 block mb-1">Твой промокод на скидку 20%:</span>
+                            <span class="font-mono text-xl font-bold text-amber-400 tracking-wider">HERITAGE20</span>
+                        </div>
+                        <div>
+                            <button onclick="openBookingModal('Стрижка по тесту (Low Fade + Кроп)', 'Любой мастер')" class="px-8 py-3.5 rounded-xl font-oswald font-bold uppercase text-stone-950 bg-amber-500 hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/25">
+                                Записаться с этим стилем со скидкой 20%
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES & INTERACTIVE COMBO CALCULATOR -->
+    <section id="services" class="py-20 wood-texture border-b border-stone-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-xs font-oswald uppercase tracking-widest text-amber-500 px-3 py-1 rounded bg-amber-500/10 border border-amber-500/20">Прозрачный прайс</span>
+                    <h2 class="text-3xl sm:text-4xl font-oswald font-bold uppercase text-white mt-3">Услуги & Интерактивный калькулятор</h2>
+                    <p class="text-stone-400 text-sm mt-1">Фиксированные цены без скрытых доплат. Выбери услуги и получи скидку 15% за комбо.</p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="text-xs px-3 py-1.5 rounded-lg bg-stone-900 border border-stone-700 text-stone-300 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Мытье и стайлинг включены
+                    </span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Price List Cards (Left) -->
+                <div class="lg:col-span-7 space-y-3">
+                    
+                    <div class="leather-card p-5 rounded-xl flex items-center justify-between gap-4">
+                        <div>
+                            <h4 class="font-oswald text-lg font-bold text-white uppercase">Мужская классическая стрижка</h4>
+                            <p class="text-xs text-stone-400">Мытье головы, подбор формы, стрижка ножницами и машинкой, укладка премиум-стайлингом</p>
+                        </div>
+                        <div class="text-right whitespace-nowrap">
+                            <span class="font-oswald text-xl font-bold text-amber-400">1 400 ₽</span>
+                            <span class="block text-[11px] text-stone-500">45 мин</span>
+                        </div>
+                    </div>
+
+                    <div class="leather-card p-5 rounded-xl flex items-center justify-between gap-4">
+                        <div>
+                            <h4 class="font-oswald text-lg font-bold text-white uppercase">Моделирование бороды & усов</h4>
+                            <p class="text-xs text-stone-400">Распаривание эфирным маслом, контур опасной бритвой, стрижка машинкой и уходовое масло</p>
+                        </div>
+                        <div class="text-right whitespace-nowrap">
+                            <span class="font-oswald text-xl font-bold text-amber-400">1 000 ₽</span>
+                            <span class="block text-[11px] text-stone-500">35 мин</span>
+                        </div>
+                    </div>
+
+                    <div class="leather-card p-5 rounded-xl flex items-center justify-between gap-4">
+                        <div>
+                            <h4 class="font-oswald text-lg font-bold text-white uppercase">Королевское бритьё опасной бритвой</h4>
+                            <p class="text-xs text-stone-400">Традиционный ритуал с двумя горячими компрессами, взбитой пеной из помазка и холодным полотенцем</p>
+                        </div>
+                        <div class="text-right whitespace-nowrap">
+                            <span class="font-oswald text-xl font-bold text-amber-400">1 200 ₽</span>
+                            <span class="block text-[11px] text-stone-500">40 мин</span>
+                        </div>
+                    </div>
+
+                    <div class="leather-card p-5 rounded-xl flex items-center justify-between gap-4">
+                        <div>
+                            <h4 class="font-oswald text-lg font-bold text-white uppercase">Камуфляж седины (борода или голова)</h4>
+                            <p class="text-xs text-stone-400">Натуральное тонирование без эффекта краски. Смывается плавно за 3-4 недели</p>
+                        </div>
+                        <div class="text-right whitespace-nowrap">
+                            <span class="font-oswald text-xl font-bold text-amber-400">900 ₽</span>
+                            <span class="block text-[11px] text-stone-500">20 мин</span>
+                        </div>
+                    </div>
+
+                    <div class="leather-card p-5 rounded-xl flex items-center justify-between gap-4">
+                        <div>
+                            <h4 class="font-oswald text-lg font-bold text-white uppercase">Отец + Сын (две стрижки)</h4>
+                            <p class="text-xs text-stone-400">Стрижка папы и сына (до 14 лет) одновременно у соседних кресел</p>
+                        </div>
+                        <div class="text-right whitespace-nowrap">
+                            <span class="font-oswald text-xl font-bold text-amber-400">2 400 ₽</span>
+                            <span class="block text-[11px] text-stone-500">50 мин</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Interactive Combo Calculator (Right) -->
+                <div class="lg:col-span-5">
+                    <div class="leather-card p-6 sm:p-7 rounded-2xl border border-amber-500/40 relative shadow-2xl">
+                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-stone-800">
+                            <div>
+                                <span class="text-xs text-amber-500 font-oswald uppercase tracking-wider block">Конструктор услуг</span>
+                                <h3 class="text-lg font-oswald font-bold text-white uppercase">Собери свой комплекс</h3>
+                            </div>
+                            <span class="text-xs px-2.5 py-1 rounded bg-amber-500/20 text-amber-400 font-bold">-15% от 2 услуг</span>
+                        </div>
+
+                        <!-- Checkbox services -->
+                        <div class="space-y-3 mb-6" id="calc-services">
+                            <label class="flex items-center justify-between p-3 rounded-lg bg-stone-900/60 border border-stone-800 hover:border-stone-700 cursor-pointer transition-all">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" checked value="1400" onchange="recalcServices()" class="calc-check w-4 h-4 accent-amber-500 rounded">
+                                    <span class="text-xs font-semibold text-white">Мужская стрижка</span>
+                                </div>
+                                <span class="text-xs text-stone-400">1 400 ₽</span>
+                            </label>
+
+                            <label class="flex items-center justify-between p-3 rounded-lg bg-stone-900/60 border border-stone-800 hover:border-stone-700 cursor-pointer transition-all">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" checked value="1000" onchange="recalcServices()" class="calc-check w-4 h-4 accent-amber-500 rounded">
+                                    <span class="text-xs font-semibold text-white">Моделирование бороды</span>
+                                </div>
+                                <span class="text-xs text-stone-400">1 000 ₽</span>
+                            </label>
+
+                            <label class="flex items-center justify-between p-3 rounded-lg bg-stone-900/60 border border-stone-800 hover:border-stone-700 cursor-pointer transition-all">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" value="700" onchange="recalcServices()" class="calc-check w-4 h-4 accent-amber-500 rounded">
+                                    <span class="text-xs font-semibold text-white">Черная детокс-маска для лица</span>
+                                </div>
+                                <span class="text-xs text-stone-400">700 ₽</span>
+                            </label>
+
+                            <label class="flex items-center justify-between p-3 rounded-lg bg-stone-900/60 border border-stone-800 hover:border-stone-700 cursor-pointer transition-all">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" value="900" onchange="recalcServices()" class="calc-check w-4 h-4 accent-amber-500 rounded">
+                                    <span class="text-xs font-semibold text-white">Камуфляж седины</span>
+                                </div>
+                                <span class="text-xs text-stone-400">900 ₽</span>
+                            </label>
+
+                            <label class="flex items-center justify-between p-3 rounded-lg bg-stone-900/60 border border-stone-800 hover:border-stone-700 cursor-pointer transition-all">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" value="500" onchange="recalcServices()" class="calc-check w-4 h-4 accent-amber-500 rounded">
+                                    <span class="text-xs font-semibold text-white">Спа-массаж головы с тоником</span>
+                                </div>
+                                <span class="text-xs text-stone-400">500 ₽</span>
+                            </label>
+                        </div>
+
+                        <!-- Total summary box -->
+                        <div class="p-4 rounded-xl bg-stone-900 border border-stone-800 mb-6">
+                            <div class="flex justify-between items-center text-xs text-stone-400 mb-1">
+                                <span>Без скидки:</span>
+                                <span id="calc-orig-price" class="line-through">2 400 ₽</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs text-amber-400 font-semibold mb-2">
+                                <span>Скидка за комбо (15%):</span>
+                                <span id="calc-discount">-360 ₽</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-2 border-t border-stone-800">
+                                <span class="font-oswald text-base text-white uppercase">Итого к оплате:</span>
+                                <span id="calc-final-price" class="font-oswald text-2xl font-bold text-amber-400">2 040 ₽</span>
+                            </div>
+                        </div>
+
+                        <button onclick="bookCalculatedCombo()" class="w-full py-4 rounded-xl font-oswald font-bold uppercase text-stone-950 bg-amber-500 hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20">
+                            Записаться на этот расчет
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LOOKBOOK / GALLERY -->
+    <section id="gallery" class="py-20 bg-[#121316] border-b border-stone-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-xs font-oswald uppercase tracking-widest text-amber-500 px-3 py-1 rounded bg-amber-500/10 border border-amber-500/20">Лукбук</span>
+                <h2 class="text-3xl sm:text-4xl font-oswald font-bold uppercase text-white mt-3">Реальные работы наших мастеров</h2>
+                <p class="text-stone-400 text-sm max-w-xl mx-auto mt-2">Каждая стрижка адаптируется под структуру волос, форму черепа и стиль клиента.</p>
+                
+                <!-- Category Filters -->
+                <div class="flex flex-wrap items-center justify-center gap-2 mt-6">
+                    <button onclick="filterGallery('all')" class="gallery-tab px-4 py-1.5 rounded-lg text-xs font-oswald uppercase tracking-wider bg-amber-500 text-black font-bold">Все работы</button>
+                    <button onclick="filterGallery('fade')" class="gallery-tab px-4 py-1.5 rounded-lg text-xs font-oswald uppercase tracking-wider bg-stone-900 border border-stone-700 text-stone-300 hover:border-amber-500">Фейды & Кроп</button>
+                    <button onclick="filterGallery('beard')" class="gallery-tab px-4 py-1.5 rounded-lg text-xs font-oswald uppercase tracking-wider bg-stone-900 border border-stone-700 text-stone-300 hover:border-amber-500">Борода & Контур</button>
+                    <button onclick="filterGallery('classic')" class="gallery-tab px-4 py-1.5 rounded-lg text-xs font-oswald uppercase tracking-wider bg-stone-900 border border-stone-700 text-stone-300 hover:border-amber-500">Классика</button>
+                </div>
+            </div>
+
+            <!-- Photos Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="gallery-item fade leather-card rounded-xl overflow-hidden group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="assets/cut_fade.jpg" alt="Low Skin Fade" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 text-[10px] font-bold font-oswald uppercase px-2 py-0.5 rounded bg-black/80 text-amber-400 border border-amber-500/30">Low Skin Fade</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-oswald text-base text-white uppercase font-bold">Чистый скин-фейд</h4>
+                        <p class="text-xs text-stone-400 mt-0.5">Безупречный дымчатый переход от нуля</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item beard leather-card rounded-xl overflow-hidden group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="assets/cut_beard.jpg" alt="Моделирование бороды" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 text-[10px] font-bold font-oswald uppercase px-2 py-0.5 rounded bg-black/80 text-amber-400 border border-amber-500/30">Борода & Бритье</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-oswald text-base text-white uppercase font-bold">Окантовка и объем бороды</h4>
+                        <p class="text-xs text-stone-400 mt-0.5">Четкие линии опасным лезвием и спа</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item classic leather-card rounded-xl overflow-hidden group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="assets/cut_classic.jpg" alt="Классический Side Part" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 text-[10px] font-bold font-oswald uppercase px-2 py-0.5 rounded bg-black/80 text-amber-400 border border-amber-500/30">Executive Classic</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-oswald text-base text-white uppercase font-bold">Классика на пробор</h4>
+                        <p class="text-xs text-stone-400 mt-0.5">Строгая мужская форма для делового стиля</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade leather-card rounded-xl overflow-hidden group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="assets/cut_pompadour.jpg" alt="Помпадур" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 text-[10px] font-bold font-oswald uppercase px-2 py-0.5 rounded bg-black/80 text-amber-400 border border-amber-500/30">Pompadour</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-oswald text-base text-white uppercase font-bold">Рокабилли помпадур</h4>
+                        <p class="text-xs text-stone-400 mt-0.5">Объемная укладка бриолином Reuzel</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MASTERS / TEAM -->
+    <section id="masters" class="py-20 wood-texture border-b border-stone-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-xs font-oswald uppercase tracking-widest text-amber-500 px-3 py-1 rounded bg-amber-500/10 border border-amber-500/20">Команда профи</span>
+                <h2 class="text-3xl sm:text-4xl font-oswald font-bold uppercase text-white mt-3">Мастера с железной репутацией</h2>
+                <p class="text-stone-400 text-sm max-w-xl mx-auto mt-2">Каждый мастер проходит строгий отбор по скорости, геометрии и санитарным нормам.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="leather-card rounded-2xl p-6 border border-stone-800 flex flex-col justify-between">
+                    <div>
+                        <div class="h-60 rounded-xl overflow-hidden mb-4 relative">
+                            <img src="assets/barber_1.jpg" alt="Артём «Скала»" class="w-full h-full object-cover">
+                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-black/80 backdrop-blur-md text-amber-400 text-[11px] font-oswald font-bold uppercase border border-amber-500/40">Top Barber • 8 лет стажа</span>
+                        </div>
+                        <h4 class="font-oswald text-xl font-bold text-white uppercase">Артём «Скала»</h4>
+                        <p class="text-xs text-amber-500 font-semibold mb-2">Шеф-барбер & основатель</p>
+                        <p class="text-xs text-stone-400 leading-relaxed">Специалист по удлиненным стрижкам, моделированию жестких бород и филигранной работе опасной бритвой.</p>
+                    </div>
+                    <button onclick="openBookingModal('Мужская стрижка', 'Артём «Скала»')" class="mt-6 w-full py-2.5 rounded-xl font-oswald font-bold uppercase text-xs tracking-wider text-white border border-stone-700 hover:border-amber-500 hover:bg-stone-900 transition-all">
+                        Записаться к Артёму
+                    </button>
+                </div>
+
+                <div class="leather-card rounded-2xl p-6 border border-stone-800 flex flex-col justify-between">
+                    <div>
+                        <div class="h-60 rounded-xl overflow-hidden mb-4 relative">
+                            <img src="assets/barber_2.jpg" alt="Михаил Воронов" class="w-full h-full object-cover">
+                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-black/80 backdrop-blur-md text-amber-400 text-[11px] font-oswald font-bold uppercase border border-amber-500/40">Senior Barber • 5 лет стажа</span>
+                        </div>
+                        <h4 class="font-oswald text-xl font-bold text-white uppercase">Михаил Воронов</h4>
+                        <p class="text-xs text-amber-500 font-semibold mb-2">Гуру чистых фейдов</p>
+                        <p class="text-xs text-stone-400 leading-relaxed">Безупречный Low/Mid Fade, текстурные кропы и окантовка до миллиметра. Быстро, мощно и без лишних пауз.</p>
+                    </div>
+                    <button onclick="openBookingModal('Мужская стрижка', 'Михаил Воронов')" class="mt-6 w-full py-2.5 rounded-xl font-oswald font-bold uppercase text-xs tracking-wider text-white border border-stone-700 hover:border-amber-500 hover:bg-stone-900 transition-all">
+                        Записаться к Михаилу
+                    </button>
+                </div>
+
+                <div class="leather-card rounded-2xl p-6 border border-stone-800 flex flex-col justify-between">
+                    <div>
+                        <div class="h-60 rounded-xl overflow-hidden mb-4 relative">
+                            <img src="assets/barber_3.jpg" alt="Даниил Крэк" class="w-full h-full object-cover">
+                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-black/80 backdrop-blur-md text-amber-400 text-[11px] font-oswald font-bold uppercase border border-amber-500/40">Pro Barber • 4 года стажа</span>
+                        </div>
+                        <h4 class="font-oswald text-xl font-bold text-white uppercase">Даниил Крэк</h4>
+                        <p class="text-xs text-amber-500 font-semibold mb-2">Мастер классики и бород</p>
+                        <p class="text-xs text-stone-400 leading-relaxed">Эксперт королевского бритья с компрессами, камуфляжа седины и классических форм на пробор.</p>
+                    </div>
+                    <button onclick="openBookingModal('Мужская стрижка', 'Даниил Крэк')" class="mt-6 w-full py-2.5 rounded-xl font-oswald font-bold uppercase text-xs tracking-wider text-white border border-stone-700 hover:border-amber-500 hover:bg-stone-900 transition-all">
+                        Записаться к Даниилу
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="py-20 bg-[#14151a] border-b border-stone-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-xs font-oswald uppercase tracking-widest text-amber-500 px-3 py-1 rounded bg-amber-500/10 border border-amber-500/20">Реальные отзывы</span>
+                <h2 class="text-3xl sm:text-4xl font-oswald font-bold uppercase text-white mt-3">Что говорят наши постоянные клиенты</h2>
+                <p class="text-stone-400 text-sm max-w-xl mx-auto mt-2">Скриншоты реальных отзывов с Яндекс.Карт и 2ГИС с оценкой 5.0 из 5.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="leather-card p-6 rounded-2xl border border-stone-800">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center">В</div>
+                            <div>
+                                <div class="text-sm font-bold text-white">Владислав С.</div>
+                                <div class="text-[11px] text-stone-400">12 ноября 2026</div>
+                            </div>
+                        </div>
+                        <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Яндекс Карты</span>
+                    </div>
+                    <div class="flex text-amber-400 text-xs mb-3">★★★★★</div>
+                    <p class="text-xs text-stone-300 leading-relaxed">
+                        «Стригусь у Артёма уже третий год. Ни разу не было косяков. Всегда четко по времени, сервис топ — предложат кофе, отличная фоновая музыка. Бороду бреют идеально с горячими полотенцами. Рекомендую однозначно!»
+                    </p>
+                </div>
+
+                <div class="leather-card p-6 rounded-2xl border border-stone-800">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center">Д</div>
+                            <div>
+                                <div class="text-sm font-bold text-white">Дмитрий Рогов</div>
+                                <div class="text-[11px] text-stone-400">4 ноября 2026</div>
+                            </div>
+                        </div>
+                        <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">2ГИС</span>
+                    </div>
+                    <div class="flex text-amber-400 text-xs mb-3">★★★★★</div>
+                    <p class="text-xs text-stone-300 leading-relaxed">
+                        «Привел сына на стрижку (брали комплекс Отец + Сын). Обоих подстригли одновременно за 45 минут! Малой в восторге, сидел играл в PS пока меня брили. Ценник адекватный за такое качество.»
+                    </p>
+                </div>
+
+                <div class="leather-card p-6 rounded-2xl border border-stone-800">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center">И</div>
+                            <div>
+                                <div class="text-sm font-bold text-white">Игорь Кравцов</div>
+                                <div class="text-[11px] text-stone-400">28 октября 2026</div>
+                            </div>
+                        </div>
+                        <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Яндекс Карты</span>
+                    </div>
+                    <div class="flex text-amber-400 text-xs mb-3">★★★★★</div>
+                    <p class="text-xs text-stone-300 leading-relaxed">
+                        «Был проездом в Краснодаре, искал где освежить фейд перед важной встречей. Попал к Михаилу. Сделал работу ювелирно, подсказал по стайлингу и дал пробник матовой глины. Чисто мужское место!»
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTS & LOCATION -->
+    <section id="contacts" class="py-20 wood-texture">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-oswald uppercase tracking-widest text-amber-500 px-3 py-1 rounded bg-amber-500/10 border border-amber-500/20">Ждем тебя в гости</span>
+                    <h2 class="text-3xl sm:text-4xl font-oswald font-bold uppercase text-white">Заезжай на правильную стрижку</h2>
+                    
+                    <div class="space-y-4 text-sm">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 rounded-lg bg-stone-900 border border-stone-800 text-amber-400 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-stone-400 uppercase tracking-wider">Адрес в Краснодаре:</span>
+                                <span class="font-bold text-white">г. Краснодар, Красная улица, 149</span>
+                                <span class="block text-xs text-stone-500 mt-0.5">Удобная бесплатная парковка во дворе для клиентов</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 rounded-lg bg-stone-900 border border-stone-800 text-amber-400 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-stone-400 uppercase tracking-wider">Часы работы:</span>
+                                <span class="font-bold text-white">Ежедневно, с 10:00 до 22:00</span>
+                                <span class="block text-xs text-stone-500 mt-0.5">Без перерывов и выходных</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 rounded-lg bg-stone-900 border border-stone-800 text-amber-400 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-stone-400 uppercase tracking-wider">Телефон для быстрой связи:</span>
+                                <a href="tel:+79180366469" class="font-bold text-white hover:text-amber-400 transition-colors">+7 (918) 036-64-69</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex gap-3">
+                        <button onclick="openBookingModal('Мужская стрижка', 'Любой мастер')" class="px-6 py-3 rounded-xl font-oswald font-bold uppercase text-xs tracking-wider text-black bg-amber-500 hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20">
+                            Онлайн-запись (-20%)
+                        </button>
+                        <a href="https://wa.me/79180366469?text=Здравствуйте!+Хочу+записаться+на+стрижку" target="_blank" class="px-6 py-3 rounded-xl font-oswald font-bold uppercase text-xs tracking-wider text-emerald-400 border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 transition-all flex items-center gap-2">
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="rounded-2xl overflow-hidden border border-stone-800 shadow-2xl relative h-[360px] bg-stone-900 flex items-center justify-center">
+                        <img src="assets/interior_lounge.jpg" alt="Интерьер барбершопа" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/85 backdrop-blur-md border border-stone-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-amber-500 font-bold uppercase block">Как нас найти:</span>
+                                <span class="text-sm font-semibold text-white">Пересечение Красной и Хакурате, вход со двора</span>
+                            </div>
+                            <a href="https://yandex.ru/maps/?text=Краснодар+Красная+149" target="_blank" class="text-xs font-bold text-amber-400 hover:underline">Открыть на Яндекс Картах →</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-10 border-t border-stone-900 text-xs text-stone-500">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <span class="font-oswald text-lg font-bold text-white uppercase">IRON & RAZOR</span>
+                <span class="text-stone-600">|</span>
+                <span>Краснодар, ул. Красная, 149</span>
+            </div>
+            <div>
+                <span>© 2026 IRON & RAZOR Barbershop. Все права защищены.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE ACTION BAR -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-stone-950/95 backdrop-blur-md border-t border-stone-800 p-2.5 flex items-center gap-2">
+        <a href="tel:+79180366469" class="flex-1 py-3 rounded-lg bg-stone-900 border border-stone-800 text-stone-200 text-center font-oswald text-xs uppercase font-bold flex items-center justify-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/></svg>
+            <span>Позвонить</span>
+        </a>
+        <button onclick="openBookingModal('Мужская стрижка', 'Любой мастер')" class="flex-[2] py-3 rounded-lg bg-amber-500 text-stone-950 text-center font-oswald text-xs uppercase font-bold shadow-lg shadow-amber-500/20">
+            Записаться (-20%)
+        </button>
+    </div>
+
+    <!-- BOOKING MODAL -->
+    <div id="booking-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="leather-card w-full max-w-lg rounded-2xl p-6 sm:p-8 border border-amber-500/30 relative shadow-2xl overflow-y-auto max-h-[90vh]">
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white text-xl">✕</button>
+            
+            <div class="mb-6">
+                <span class="text-xs font-oswald uppercase tracking-widest text-amber-500">Быстрая запись</span>
+                <h3 class="text-2xl font-oswald font-bold uppercase text-white mt-1">Запись в IRON & RAZOR</h3>
+                <p class="text-xs text-stone-400 mt-1">Оставь номер — зафиксируем скидку 20% на первый визит.</p>
+            </div>
+
+            <form onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1">Выбранная услуга</label>
+                    <input type="text" id="modal-service" class="w-full bg-stone-900 border border-stone-700 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-amber-500 outline-none" required>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1">Мастер</label>
+                    <select id="modal-master" class="w-full bg-stone-900 border border-stone-700 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-amber-500 outline-none">
+                        <option value="Любой свободный мастер">Любой свободный мастер (быстрее всего)</option>
+                        <option value="Артём «Скала»">Артём «Скала» (Top Barber)</option>
+                        <option value="Михаил Воронов">Михаил Воронов (Senior Barber)</option>
+                        <option value="Даниил Крэк">Даниил Крэк (Pro Barber)</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1">День визита</label>
+                        <select id="modal-date" class="w-full bg-stone-900 border border-stone-700 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-amber-500 outline-none">
+                            <option value="Сегодня">Сегодня</option>
+                            <option value="Завтра">Завтра</option>
+                            <option value="Выходные">Ближайшие выходные</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1">Время</label>
+                        <select id="modal-time" class="w-full bg-stone-900 border border-stone-700 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-amber-500 outline-none">
+                            <option value="11:00">11:00</option>
+                            <option value="12:30">12:30</option>
+                            <option value="14:00">14:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="18:30">18:30</option>
+                            <option value="20:00">20:00</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1">Твое имя</label>
+                    <input type="text" id="modal-name" placeholder="Константин" class="w-full bg-stone-900 border border-stone-700 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-amber-500 outline-none" required>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1">Телефон</label>
+                    <input type="tel" id="modal-phone" placeholder="+7 (999) 000-00-00" class="w-full bg-stone-900 border border-stone-700 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-amber-500 outline-none" required>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-4 rounded-xl font-oswald font-bold uppercase text-stone-950 bg-amber-500 hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/25">
+                        Подтвердить запись со скидкой 20%
+                    </button>
+                    <p class="text-[10px] text-stone-500 text-center mt-2">После отправки откроется WhatsApp с готовым сообщением администратору.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JS Logic -->
+    <script>
+        // Modal functions
+        function openBookingModal(service, master) {
+            if(service) document.getElementById('modal-service').value = service;
+            if(master) document.getElementById('modal-master').value = master;
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            const service = document.getElementById('modal-service').value;
+            const master = document.getElementById('modal-master').value;
+            const date = document.getElementById('modal-date').value;
+            const time = document.getElementById('modal-time').value;
+            const name = document.getElementById('modal-name').value;
+            const phone = document.getElementById('modal-phone').value;
+
+            const msg = `Здравствуйте! Хочу записаться на ${service} к мастеру ${master} на ${date} в ${time}. Мое имя: ${name}, тел: ${phone}. Промокод: HERITAGE20 (-20%).`;
+            const waUrl = `https://wa.me/79180366469?text=${encodeURIComponent(msg)}`;
+            window.open(waUrl, '_blank');
+            closeBookingModal();
+            alert('Спасибо! Мы перенаправляем вас в WhatsApp для подтверждения времени.');
+        }
+
+        // Quiz Logic
+        let quizAnswers = {};
+        function selectQuizOption(key, val, currentStep) {
+            quizAnswers[key] = val;
+            document.getElementById(`step-${currentStep}`).classList.add('hidden');
+            const nextStep = currentStep + 1;
+            document.getElementById(`step-${nextStep}`).classList.remove('hidden');
+            document.getElementById('quiz-step-title').textContent = `Шаг ${nextStep} из 3`;
+            document.getElementById('quiz-progress-text').textContent = `${nextStep * 33}% завершено`;
+        }
+
+        function finishQuiz(beardVal) {
+            quizAnswers['beard'] = beardVal;
+            document.getElementById('step-3').classList.add('hidden');
+            document.getElementById('step-result').classList.remove('hidden');
+            document.getElementById('quiz-step-title').textContent = 'Тест завершен!';
+            document.getElementById('quiz-progress-text').textContent = '100%';
+            
+            // Customize result text
+            const titleEl = document.getElementById('result-haircut-title');
+            if(quizAnswers.shape === 'Круглое') {
+                titleEl.textContent = 'Твой стиль: High Fade + Объемный Помпадур';
+            } else if(quizAnswers.shape === 'Квадратное') {
+                titleEl.textContent = 'Твой стиль: Low Skin Fade + Текстурный Кроп';
+            } else {
+                titleEl.textContent = 'Твой стиль: Classic Side Part + Моделирование бороды';
+            }
+        }
+
+        // Calculator Logic
+        function recalcServices() {
+            const checks = document.querySelectorAll('.calc-check:checked');
+            let total = 0;
+            checks.forEach(c => total += parseInt(c.value));
+            
+            let discount = 0;
+            if(checks.length >= 2) {
+                discount = Math.round(total * 0.15);
+            }
+            const finalPrice = total - discount;
+            
+            document.getElementById('calc-orig-price').textContent = `${total} ₽`;
+            document.getElementById('calc-discount').textContent = `-${discount} ₽`;
+            document.getElementById('calc-final-price').textContent = `${finalPrice} ₽`;
+        }
+
+        function bookCalculatedCombo() {
+            const checks = document.querySelectorAll('.calc-check:checked');
+            let services = [];
+            checks.forEach(c => {
+                const label = c.closest('label').querySelector('.text-white').textContent;
+                services.push(label);
+            });
+            const finalPrice = document.getElementById('calc-final-price').textContent;
+            openBookingModal(`Комплекс (${services.join(' + ')}) за ${finalPrice}`, 'Любой мастер');
+        }
+
+        // Gallery Filter
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const tabs = document.querySelectorAll('.gallery-tab');
+            
+            tabs.forEach(t => {
+                t.classList.remove('bg-amber-500', 'text-black');
+                t.classList.add('bg-stone-900', 'text-stone-300');
+            });
+            event.target.classList.add('bg-amber-500', 'text-black');
+            event.target.classList.remove('bg-stone-900', 'text-stone-300');
+
+            items.forEach(item => {
+                if(category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

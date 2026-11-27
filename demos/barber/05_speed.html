@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRECISION LAB — Высокоточный экспресс-барбершоп в Краснодаре</title>
+    <meta name="description" content="Инженерная точность. Стрижка ровно за 35 минут. Без очередей и опозданий. Гарантия формы 7 дней. Абонементы на стрижки.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        tech: {
+                            orange: '#f97316',
+                            dark: '#0f1013',
+                            card: '#16181d',
+                            border: '#272a33'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .tech-border {
+            border: 1px solid #272a33;
+        }
+        .tech-glow {
+            box-shadow: 0 0 25px rgba(249, 115, 22, 0.15);
+        }
+        .grid-bg {
+            background-color: #0d0e12;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body class="bg-[#0d0e12] text-stone-200 antialiased font-sans selection:bg-orange-500 selection:text-black">
+
+    <!-- Top Outreach / Demo Switcher Bar -->
+    <div class="bg-black text-stone-300 py-2 px-4 text-xs sticky top-0 z-50 border-b border-stone-800 backdrop-blur-md font-mono">
+        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-orange-500 animate-pulse"></span>
+                <span class="font-bold text-white tracking-wide">ДЕМО ВАРИАЦИЯ #5: PRECISION SPEED & TECH</span>
+                <span class="text-stone-500 hidden md:inline">| Для сверхточных экспресс-студий с онлайн-таймингом</span>
+            </div>
+            <div class="flex items-center gap-3 font-sans">
+                <label class="text-stone-400 text-[11px] hidden sm:inline">Концепция:</label>
+                <select onchange="if(this.value) window.location.href=this.value" class="bg-stone-900 border border-stone-700 text-stone-200 text-xs rounded-lg px-2.5 py-1 focus:ring-1 focus:ring-orange-500 outline-none">
+                    <option value="01_heritage.html">1. Олдскул & Брутал (Iron & Razor)</option>
+                    <option value="02_luxury.html">2. Премиум Люкс (Royal Cuts VIP)</option>
+                    <option value="03_urban.html">3. Стритвир & Нео (Cult 13)</option>
+                    <option value="04_family.html">4. Семейный Лофт (Family & Bro)</option>
+                    <option value="05_speed.html" selected>5. Хай-Тек Экспресс (Precision Lab)</option>
+                </select>
+                <a href="index.html" class="px-2.5 py-1 rounded-lg bg-orange-500 text-black font-bold hover:bg-orange-400 transition-colors">
+                    Хаб презентации →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="bg-[#101217]/95 backdrop-blur-md sticky top-[37px] z-40 border-b border-stone-800 transition-all font-mono">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between gap-4">
+            <!-- Brand Logo & Name -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-xl bg-stone-900 border border-orange-500/50 flex items-center justify-center text-orange-400 font-mono font-bold text-xl group-hover:border-orange-400 transition-all">
+                    //P
+                </div>
+                <div>
+                    <span class="block font-bold text-lg text-white tracking-wider font-sans uppercase">PRECISION LAB</span>
+                    <span class="block text-[10px] text-orange-500 font-medium tracking-widest uppercase">Speed & Haircut Protocol</span>
+                </div>
+            </a>
+
+            <!-- Nav Links (Desktop) -->
+            <nav class="hidden md:flex items-center gap-7 text-xs font-semibold tracking-wider uppercase text-stone-300 font-sans">
+                <a href="#radar" class="hover:text-orange-400 transition-colors flex items-center gap-1.5 text-orange-400">
+                    <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span>
+                    Слоты сегодня
+                </a>
+                <a href="#standards" class="hover:text-orange-400 transition-colors">Стандарты</a>
+                <a href="#pricing" class="hover:text-orange-400 transition-colors">Тарифы</a>
+                <a href="#subscription" class="hover:text-orange-400 transition-colors">Смарт-абонементы</a>
+                <a href="#contacts" class="hover:text-orange-400 transition-colors">Локация</a>
+            </nav>
+
+            <!-- Action CTAs -->
+            <div class="flex items-center gap-3">
+                <a href="tel:+79888882526" class="hidden lg:flex flex-col text-right">
+                    <span class="text-xs font-bold text-white hover:text-orange-400 transition-colors">+7 (988) 888-25-26</span>
+                    <span class="text-[10px] text-stone-500 font-sans">Черкасская, 57/2</span>
+                </a>
+                <button onclick="openSpeedModal('Экспресс-стрижка (35 мин)')" class="px-5 py-2.5 rounded-lg font-mono font-bold uppercase tracking-wider text-xs text-black bg-orange-500 hover:bg-orange-400 transition-all shadow-lg shadow-orange-500/20 active:scale-95">
+                    Слот за 10 сек
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative overflow-hidden pt-14 pb-20 grid-bg border-b border-stone-800">
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column -->
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded border border-orange-500/30 bg-orange-500/10 text-orange-400 text-xs font-mono mb-6">
+                        <span>TIMING: 35 MIN • 620+ REVIEWS 5.0 ★</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-sans font-bold tracking-tight text-white uppercase leading-[1.08] mb-6">
+                        Идеальная стрижка <span class="text-orange-500">ровно за 35 минут</span>. Без опозданий
+                    </h1>
+
+                    <p class="text-stone-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl font-sans">
+                        Инженерный протокол стрижки, немецкий инструмент, лазерный контроль окантовки. Ценим каждую минуту вашего графика: опоздаем хотя бы на 5 минут — скидка 50%.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-10 font-sans">
+                        <button onclick="openSpeedModal('Экспресс-стрижка (35 мин)')" class="px-8 py-4 rounded-xl font-mono font-bold text-xs uppercase tracking-wider text-black bg-orange-500 hover:bg-orange-400 transition-all shadow-xl shadow-orange-500/25 flex items-center justify-center gap-2">
+                            <span>Занять слот (онлайн за 2 клика)</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                        <a href="#radar" class="px-8 py-4 rounded-xl font-mono text-xs uppercase tracking-wider text-stone-200 border border-stone-700 hover:border-orange-500 hover:text-orange-400 transition-all bg-stone-900/60 flex items-center justify-center">
+                            <span>Смотреть свободные слоты</span>
+                        </a>
+                    </div>
+
+                    <!-- Metrics -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-stone-800 font-mono">
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-bold text-orange-500">35:00</span>
+                            <span class="text-[10px] text-stone-400 uppercase tracking-wider">Фикс-тайминг</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-bold text-white">7 дней</span>
+                            <span class="text-[10px] text-stone-400 uppercase tracking-wider">Гарантия формы</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-bold text-orange-500">0 мин</span>
+                            <span class="text-[10px] text-stone-400 uppercase tracking-wider">Ожидание в очереди</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden border border-orange-500/30 shadow-2xl shadow-orange-500/10 group">
+                        <img src="assets/hero_speed.jpg" alt="Высокоточная стрижка" class="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+                        
+                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-stone-950/90 backdrop-blur-md border border-stone-800 font-mono">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-[10px] text-orange-400 uppercase font-bold block">FAST PROTOCOL</span>
+                                    <div class="text-base font-bold text-white uppercase font-sans">Speed Combo: Стрижка + Борода</div>
+                                    <div class="text-xs text-stone-400">Мытье, геометрия, распаривание за 50 минут</div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs line-through text-stone-500 block">2 400 ₽</span>
+                                    <span class="text-xl font-bold text-orange-400">1 900 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- REAL-TIME TIME SLOT RADAR -->
+    <section id="radar" class="py-16 bg-[#121419] border-b border-stone-800">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-widest text-orange-500">Live Slots Radar</span>
+                    <h2 class="text-2xl sm:text-3xl font-sans font-bold uppercase text-white mt-1">Свободные слоты на сегодня</h2>
+                </div>
+                <div class="text-xs font-mono text-stone-400 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Обновлено только что</span>
+                </div>
+            </div>
+
+            <!-- Slot buttons -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono">
+                
+                <button onclick="openSpeedModalWithTime('14:30')" class="p-4 rounded-xl bg-stone-900 border border-stone-700 hover:border-orange-500 text-left transition-all group">
+                    <span class="text-xs text-emerald-400 block mb-1">СВОБОДНО</span>
+                    <span class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">14:30</span>
+                    <span class="block text-[11px] text-stone-500 mt-1">Мастер Pro • 35 мин</span>
+                </button>
+
+                <button onclick="openSpeedModalWithTime('16:00')" class="p-4 rounded-xl bg-stone-900 border border-stone-700 hover:border-orange-500 text-left transition-all group">
+                    <span class="text-xs text-emerald-400 block mb-1">СВОБОДНО</span>
+                    <span class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">16:00</span>
+                    <span class="block text-[11px] text-stone-500 mt-1">Мастер Senior • 35 мин</span>
+                </button>
+
+                <button onclick="openSpeedModalWithTime('17:45')" class="p-4 rounded-xl bg-stone-900 border border-stone-700 hover:border-orange-500 text-left transition-all group">
+                    <span class="text-xs text-emerald-400 block mb-1">СВОБОДНО</span>
+                    <span class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">17:45</span>
+                    <span class="block text-[11px] text-stone-500 mt-1">Мастер Pro • 35 мин</span>
+                </button>
+
+                <button onclick="openSpeedModalWithTime('19:15')" class="p-4 rounded-xl bg-stone-900 border border-orange-500/40 bg-orange-500/5 text-left transition-all group">
+                    <span class="text-xs text-orange-400 block mb-1">ГОРЯЩИЙ СЛОТ</span>
+                    <span class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">19:15</span>
+                    <span class="block text-[11px] text-stone-400 mt-1">Скидка -200 ₽</span>
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STANDARDS & GUARANTEES -->
+    <section id="standards" class="py-20 bg-[#0d0e12] border-b border-stone-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-14">
+                <span class="text-xs font-mono uppercase tracking-widest text-orange-500">Quality Assurance</span>
+                <h2 class="text-3xl font-sans font-bold uppercase text-white mt-2">Стандарты протокола PRECISION</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-sans">
+                
+                <div class="p-6 rounded-2xl bg-[#14161b] border border-stone-800">
+                    <div class="text-2xl font-mono text-orange-500 mb-3 font-bold">[01]</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Гарантия времени</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        Мы замеряем время каждого визита. Никаких «подождите 15 минут в холле». Если мы задержим начало стрижки — вы платите половину.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-[#14161b] border border-stone-800">
+                    <div class="text-2xl font-mono text-orange-500 mb-3 font-bold">[02]</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Гарантия геометрии 7 дней</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        Если в течение недели вам покажется, что виски отросли неровно или прядь лежит не так — мы бесплатно скорректируем форму за 15 минут.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-[#14161b] border border-stone-800">
+                    <div class="text-2xl font-mono text-orange-500 mb-3 font-bold">[03]</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Лазерная окантовка</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        Используем машинки с микронным срезом 0.1 мм и триммеры с титановым напылением. Четкость линий видна даже через две недели.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SMART SUBSCRIPTIONS -->
+    <section id="subscription" class="py-20 bg-[#121419] border-b border-stone-800">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-14">
+                <span class="text-xs font-mono uppercase tracking-widest text-orange-500">Smart Subscriptions</span>
+                <h2 class="text-3xl font-sans font-bold uppercase text-white mt-2">Смарт-абонементы на мужской уход</h2>
+                <p class="text-stone-400 text-sm max-w-lg mx-auto mt-2">Фиксированная подписка без забот: всегда свежая форма со скидкой до 40%.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-[#181b22] to-[#121419] border-2 border-orange-500/50 relative shadow-xl">
+                    <span class="text-xs font-mono font-bold px-3 py-1 rounded bg-orange-500 text-black uppercase">Выбор профессионалов</span>
+                    <h3 class="text-2xl font-bold font-sans text-white uppercase mt-4">Безлимит на месяц</h3>
+                    <p class="text-xs text-stone-400 mt-1 mb-6">До 4 стрижек и коррекций бороды в течение 30 дней. Приходи в любое время.</p>
+                    
+                    <div class="flex items-baseline gap-2 mb-6 font-mono">
+                        <span class="text-3xl font-bold text-orange-400">3 490 ₽</span>
+                        <span class="text-xs text-stone-500">/ месяц</span>
+                    </div>
+
+                    <button onclick="openSpeedModal('Абонемент «Безлимит на месяц»')" class="w-full py-4 rounded-xl font-mono font-bold uppercase text-xs tracking-wider text-black bg-orange-500 hover:bg-orange-400 transition-all">
+                        Оформить абонемент
+                    </button>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-[#16181e] border border-stone-800 relative shadow-xl">
+                    <span class="text-xs font-mono font-bold px-3 py-1 rounded bg-stone-800 text-stone-300 uppercase">Квартальный</span>
+                    <h3 class="text-2xl font-bold font-sans text-white uppercase mt-4">Смарт-Квартал (3 месяца)</h3>
+                    <p class="text-xs text-stone-400 mt-1 mb-6">Полное сопровождение формы стрижки и бороды на 90 дней со скидкой 40%.</p>
+                    
+                    <div class="flex items-baseline gap-2 mb-6 font-mono">
+                        <span class="text-3xl font-bold text-white">8 990 ₽</span>
+                        <span class="text-xs text-stone-500">/ 3 месяца</span>
+                    </div>
+
+                    <button onclick="openSpeedModal('Абонемент «Квартал»')" class="w-full py-4 rounded-xl font-mono font-bold uppercase text-xs tracking-wider text-white border border-stone-700 hover:border-orange-500 transition-all">
+                        Оформить квартал
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section id="contacts" class="py-20 bg-[#0d0e12]">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-mono uppercase tracking-widest text-orange-500">Location Point</span>
+                    <h2 class="text-3xl font-sans font-bold uppercase text-white">PRECISION LAB в Краснодаре</h2>
+                    
+                    <div class="space-y-4 text-sm font-sans">
+                        <div>
+                            <span class="block text-xs font-mono text-stone-500 uppercase tracking-wider">Адрес:</span>
+                            <span class="font-bold text-white text-base">г. Краснодар, Черкасская улица, 57/2</span>
+                            <span class="block text-xs text-stone-400 mt-0.5">Удобный заезд с Восточно-Кругликовской</span>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-mono text-stone-500 uppercase tracking-wider">График:</span>
+                            <span class="font-bold text-white text-base">09:00 – 21:00 ежедневно</span>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-mono text-stone-500 uppercase tracking-wider">Телефон:</span>
+                            <a href="tel:+79888882526" class="font-bold text-orange-400 text-lg hover:underline">+7 (988) 888-25-26</a>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="openSpeedModal('Экспресс-стрижка')" class="px-8 py-3.5 rounded-xl font-mono font-bold uppercase text-xs tracking-wider text-black bg-orange-500 hover:bg-orange-400 transition-all shadow-lg shadow-orange-500/25">
+                            Занять слот за 10 сек
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="rounded-2xl overflow-hidden border border-stone-800 shadow-2xl relative h-[360px] bg-stone-900">
+                        <img src="assets/interior_chairs.jpg" alt="Интерьер Precision Lab" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/85 backdrop-blur-md border border-stone-800 flex items-center justify-between font-mono">
+                            <div>
+                                <span class="text-xs text-orange-400 uppercase font-bold block">Ориентир:</span>
+                                <span class="text-xs text-white">Черкасская 57/2, 1 этаж, вывеска с таймером</span>
+                            </div>
+                            <a href="https://yandex.ru/maps/?text=Краснодар+Черкасская+57/2" target="_blank" class="text-xs font-bold text-orange-400 hover:underline">Яндекс Карты →</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-8 border-t border-stone-900 text-xs text-stone-600 font-mono">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <span class="text-sm font-bold text-white">PRECISION LAB // HIGH-SPEED BARBERSHOP</span>
+            <span>© 2026 PRECISION LAB. 35-min protocol standard.</span>
+        </div>
+    </footer>
+
+    <!-- SPEED MODAL -->
+    <div id="speed-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 font-mono">
+        <div class="bg-[#15171d] w-full max-w-lg rounded-2xl p-6 sm:p-8 border border-orange-500/40 relative shadow-2xl overflow-y-auto max-h-[90vh]">
+            <button onclick="closeSpeedModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white text-xl">✕</button>
+            
+            <div class="mb-6">
+                <span class="text-xs uppercase tracking-widest text-orange-500">Бронирование слота</span>
+                <h3 class="text-2xl font-bold uppercase text-white mt-1 font-sans">Слот в PRECISION LAB</h3>
+                <p class="text-xs text-stone-400 mt-1">Подтверждение брони за 10 секунд без звонка.</p>
+            </div>
+
+            <form onsubmit="handleSpeedSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs uppercase text-stone-300 mb-1">Услуга</label>
+                    <input type="text" id="speed-service" class="w-full bg-stone-900 border border-stone-700 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-orange-500 outline-none" required>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs uppercase text-stone-300 mb-1">День</label>
+                        <select id="speed-date" class="w-full bg-stone-900 border border-stone-700 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-orange-500 outline-none">
+                            <option value="Сегодня">Сегодня</option>
+                            <option value="Завтра">Завтра</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase text-stone-300 mb-1">Время</label>
+                        <input type="text" id="speed-time" value="16:00" class="w-full bg-stone-900 border border-stone-700 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-orange-500 outline-none" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase text-stone-300 mb-1">Имя</label>
+                    <input type="text" id="speed-name" placeholder="Олег" class="w-full bg-stone-900 border border-stone-700 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-orange-500 outline-none" required>
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase text-stone-300 mb-1">Телефон</label>
+                    <input type="tel" id="speed-phone" placeholder="+7 (999) 000-00-00" class="w-full bg-stone-900 border border-stone-700 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-orange-500 outline-none" required>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-4 rounded-xl font-bold uppercase text-xs tracking-wider text-black bg-orange-500 hover:bg-orange-400 transition-all shadow-lg shadow-orange-500/25">
+                        Зафиксировать слот
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JS Logic -->
+    <script>
+        function openSpeedModal(service) {
+            if(service) document.getElementById('speed-service').value = service;
+            const modal = document.getElementById('speed-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function openSpeedModalWithTime(timeStr) {
+            document.getElementById('speed-service').value = 'Экспресс-стрижка (35 мин)';
+            document.getElementById('speed-time').value = timeStr;
+            const modal = document.getElementById('speed-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeSpeedModal() {
+            const modal = document.getElementById('speed-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleSpeedSubmit(e) {
+            e.preventDefault();
+            const service = document.getElementById('speed-service').value;
+            const date = document.getElementById('speed-date').value;
+            const time = document.getElementById('speed-time').value;
+            const name = document.getElementById('speed-name').value;
+            const phone = document.getElementById('speed-phone').value;
+
+            const msg = `Здравствуйте! Занимаю слот на ${service}. День: ${date}, время: ${time}. Имя: ${name}, тел: ${phone}. Протокол 35 мин.`;
+            const waUrl = `https://wa.me/79888882526?text=${encodeURIComponent(msg)}`;
+            window.open(waUrl, '_blank');
+            closeSpeedModal();
+            alert('Слот зарезервирован! Открываем WhatsApp для мгновенного подтверждения.');
+        }
+    </script>
+</body>
+</html>

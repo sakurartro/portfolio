@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CULT 13 — Стритвир & Нео-барбершоп в Краснодаре</title>
+    <meta name="description" content="Самые чистые фейды, текстурные кропы, тату-дизайны волос. PS5 лаунж, хип-хоп вайб и крутые мастера. Забирай скидку 20% на первый визит.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        bebas: ['Bebas Neue', 'sans-serif'],
+                    },
+                    colors: {
+                        cyber: {
+                            DEFAULT: '#22c55e',
+                            glow: 'rgba(34, 197, 94, 0.35)',
+                            dark: '#15803d',
+                            neon: '#4ade80'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .neon-border {
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        .neon-glow {
+            box-shadow: 0 0 25px rgba(34, 197, 94, 0.2);
+        }
+        .urban-card {
+            background: #111215;
+            border: 1px solid #22232a;
+        }
+        .urban-card:hover {
+            border-color: #22c55e;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: 200%;
+            animation: marquee 20s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-[#090a0d] text-stone-200 antialiased font-sans selection:bg-[#22c55e] selection:text-black">
+
+    <!-- Top Outreach / Demo Switcher Bar -->
+    <div class="bg-black text-stone-300 py-2 px-4 text-xs sticky top-0 z-50 border-b border-stone-800 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="font-bold text-white tracking-wide">ДЕМО ВАРИАЦИЯ #3: NEO-URBAN & STREETWEAR</span>
+                <span class="text-stone-500 hidden md:inline">| Для молодежных, хайповых и трендовых студий</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <label class="text-stone-400 text-[11px] hidden sm:inline">Концепция:</label>
+                <select onchange="if(this.value) window.location.href=this.value" class="bg-stone-900 border border-stone-700 text-stone-200 text-xs rounded-lg px-2.5 py-1 focus:ring-1 focus:ring-emerald-500 outline-none">
+                    <option value="01_heritage.html">1. Олдскул & Брутал (Iron & Razor)</option>
+                    <option value="02_luxury.html">2. Премиум Люкс (Royal Cuts VIP)</option>
+                    <option value="03_urban.html" selected>3. Стритвир & Нео (Cult 13)</option>
+                    <option value="04_family.html">4. Семейный Лофт (Family & Bro)</option>
+                    <option value="05_speed.html">5. Хай-Тек Экспресс (Precision Lab)</option>
+                </select>
+                <a href="index.html" class="px-2.5 py-1 rounded-lg bg-emerald-500 text-black font-bold hover:bg-emerald-400 transition-colors">
+                    Хаб презентации →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ticker Tape -->
+    <div class="bg-emerald-500 text-black py-1.5 overflow-hidden font-bebas text-sm tracking-widest uppercase font-bold select-none">
+        <div class="animate-marquee whitespace-nowrap">
+            <span>STREETWEAR • SKIN FADE • TEXTURED CROP • PS5 LOUNGE • MONSTER ENERGY • CHILL VIBES • HAIR TATTOO • </span>
+            <span>STREETWEAR • SKIN FADE • TEXTURED CROP • PS5 LOUNGE • MONSTER ENERGY • CHILL VIBES • HAIR TATTOO • </span>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="bg-[#0b0c10]/95 backdrop-blur-md sticky top-[37px] z-40 border-b border-stone-800 transition-all">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between gap-4">
+            <!-- Brand Logo & Name -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-xl bg-black border-2 border-emerald-500 flex items-center justify-center text-emerald-400 shadow-lg shadow-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-black transition-all">
+                    <span class="font-bebas text-2xl font-bold">13</span>
+                </div>
+                <div>
+                    <span class="block font-bebas text-2xl tracking-wider text-white uppercase leading-none">CULT 13</span>
+                    <span class="block text-[10px] text-emerald-400 font-bold tracking-widest uppercase">Street Barbershop</span>
+                </div>
+            </a>
+
+            <!-- Nav Links (Desktop) -->
+            <nav class="hidden md:flex items-center gap-7 text-xs font-bold tracking-wider uppercase text-stone-300">
+                <a href="#drops" class="hover:text-emerald-400 transition-colors">Дропы & Меню</a>
+                <a href="#roulette" class="hover:text-emerald-400 transition-colors text-emerald-400 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    Рулетка скидок
+                </a>
+                <a href="#crew" class="hover:text-emerald-400 transition-colors">Крю</a>
+                <a href="#lounge" class="hover:text-emerald-400 transition-colors">PS5 Лаунж</a>
+                <a href="#contacts" class="hover:text-emerald-400 transition-colors">Локация</a>
+            </nav>
+
+            <!-- Action CTAs -->
+            <div class="flex items-center gap-3">
+                <a href="tel:+79880882424" class="hidden lg:flex flex-col text-right">
+                    <span class="text-xs font-bold text-white hover:text-emerald-400 transition-colors">+7 (988) 088-24-24</span>
+                    <span class="text-[10px] text-stone-400">Зиповская, 20</span>
+                </a>
+                <button onclick="openUrbanModal('Fresh Skin Fade', 'Тим Blade')" class="px-5 py-2.5 rounded-xl font-bebas text-base uppercase tracking-wider text-black bg-emerald-500 hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/25 active:scale-95">
+                    Залететь на стрижку
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative overflow-hidden pt-12 pb-20 border-b border-stone-800">
+        <div class="absolute -top-32 left-1/4 w-96 h-96 rounded-full bg-emerald-500/10 blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column -->
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-6">
+                        <span>★ 5.0 на Яндекс.Картах • 220+ отзывов</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-bebas font-bold tracking-wide text-white uppercase leading-[0.95] mb-6">
+                        Самые сочные фейды <br><span class="text-emerald-400">и текстурные кропы</span> твоего города
+                    </h1>
+
+                    <p class="text-stone-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl font-normal">
+                        Забудь про унылые конвейеры. У нас заряженный стритвир-вайб: дымчатые фейды от нуля, PlayStation 5 в зоне чилла, топовые треки и мастера, которые шарят за тренды.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                        <button onclick="openUrbanModal('Стрижка + Борода', 'Тим Blade')" class="px-8 py-4 rounded-xl font-bebas text-lg uppercase tracking-wider text-black bg-emerald-500 hover:bg-emerald-400 transition-all shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2">
+                            <span>Записаться на дроп (-300 ₽)</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                        <a href="#roulette" class="px-8 py-4 rounded-xl font-bebas text-lg uppercase tracking-wider text-stone-200 border border-stone-700 hover:border-emerald-500 hover:text-emerald-400 transition-all bg-stone-900/60 flex items-center justify-center gap-2">
+                            <span>Крутить рулетку скидок ⚡</span>
+                        </a>
+                    </div>
+
+                    <!-- Metrics -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-stone-800">
+                        <div>
+                            <span class="block text-3xl font-bebas font-bold text-emerald-400">100%</span>
+                            <span class="text-[11px] text-stone-400 uppercase tracking-wider">Чистый Fade</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bebas font-bold text-white">PS5</span>
+                            <span class="text-[11px] text-stone-400 uppercase tracking-wider">FIFA & Mortal Kombat</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bebas font-bold text-emerald-400">35 мин</span>
+                            <span class="text-[11px] text-stone-400 uppercase tracking-wider">Быстро & чётко</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden border border-emerald-500/40 shadow-2xl shadow-emerald-500/10 group">
+                        <img src="assets/hero_urban.jpg" alt="Стритвир барбершоп" class="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+                        
+                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-stone-950/90 backdrop-blur-md border border-stone-800">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-[10px] uppercase font-bold text-emerald-400 tracking-wider">DROP OF THE WEEK</span>
+                                    <h3 class="font-bebas text-xl text-white uppercase">Textured Crop + Low Fade</h3>
+                                    <p class="text-xs text-stone-400">Фирменная текстура пудрой Slick Gorilla</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs line-through text-stone-500">1 700 ₽</span>
+                                    <span class="block font-bebas text-2xl text-emerald-400">1 390 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE DISCOUNT ROULETTE -->
+    <section id="roulette" class="py-16 bg-[#0e0f14] border-b border-stone-800">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 px-3 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">Интерактивный бонус</span>
+                <h2 class="text-3xl sm:text-4xl font-bebas font-bold uppercase text-white mt-3">Крути рулетку — выбивай свой дроп</h2>
+                <p class="text-stone-400 text-sm max-w-md mx-auto mt-1">Один спин для новых гостей студии. Выиграй скидку от 15% до 40% или бесплатный стайлинг.</p>
+            </div>
+
+            <div class="urban-card p-6 sm:p-8 rounded-2xl relative shadow-2xl text-center">
+                <div id="roulette-box" class="py-8">
+                    <div class="inline-block p-6 rounded-2xl bg-black border-2 border-emerald-500/60 mb-6 relative">
+                        <span id="roulette-display" class="font-bebas text-4xl sm:text-5xl text-emerald-400 tracking-wider">СКИДКА 25% НА FADE</span>
+                    </div>
+                    <div>
+                        <button id="spin-btn" onclick="spinRoulette()" class="px-8 py-4 rounded-xl font-bebas text-xl uppercase tracking-wider text-black bg-emerald-500 hover:bg-emerald-400 transition-all shadow-xl shadow-emerald-500/30">
+                            Крутить рулетку 🎰
+                        </button>
+                    </div>
+                </div>
+
+                <div id="roulette-result" class="hidden py-4 space-y-4">
+                    <span class="text-xs uppercase font-bold text-emerald-400">Поздравляем! Твой выигрыш:</span>
+                    <h3 id="won-prize" class="text-3xl sm:text-4xl font-bebas font-bold text-white uppercase">СКИДКА 30% НА КОМПЛЕКС «СТРИЖКА + БОРОДА»</h3>
+                    <div class="inline-block px-4 py-2 rounded-lg bg-stone-900 border border-emerald-500/40 text-emerald-400 font-mono text-lg font-bold">
+                        ПРОМОКОД: CULT30
+                    </div>
+                    <div>
+                        <button onclick="openUrbanModal('Выигрыш в рулетке (Скидка 30%)', 'Любой мастер')" class="px-8 py-3.5 rounded-xl font-bebas text-lg uppercase tracking-wider text-black bg-emerald-500 hover:bg-emerald-400 transition-all">
+                            Забрать скидку и записаться
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU / DROPS -->
+    <section id="drops" class="py-20 border-b border-stone-800 bg-[#090a0d]">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 px-3 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">Меню услуг</span>
+                <h2 class="text-3xl sm:text-4xl font-bebas font-bold uppercase text-white mt-3">Дропы & Прайс студии</h2>
+                <p class="text-stone-400 text-sm mt-1">Четкий прайс, мытье с премиум шампунем и стайлинг всегда включены в чек.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <div class="urban-card p-5 rounded-xl flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bebas text-xl text-white uppercase tracking-wider">Fresh Skin Fade</h4>
+                        <p class="text-xs text-stone-400">Дымчатый переход с нуля, геометрия висков и шейной линии</p>
+                    </div>
+                    <div class="text-right whitespace-nowrap pl-4">
+                        <span class="font-bebas text-2xl text-emerald-400">1 300 ₽</span>
+                        <span class="block text-[10px] text-stone-500">40 мин</span>
+                    </div>
+                </div>
+
+                <div class="urban-card p-5 rounded-xl flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bebas text-xl text-white uppercase tracking-wider">Textured Crop / Mullet</h4>
+                        <p class="text-xs text-stone-400">Рваная слоистая текстура, акцентная челка, укладка матовой пудрой</p>
+                    </div>
+                    <div class="text-right whitespace-nowrap pl-4">
+                        <span class="font-bebas text-2xl text-emerald-400">1 400 ₽</span>
+                        <span class="block text-[10px] text-stone-500">45 мин</span>
+                    </div>
+                </div>
+
+                <div class="urban-card p-5 rounded-xl flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bebas text-xl text-white uppercase tracking-wider">Beard Lineup & Shape</h4>
+                        <p class="text-xs text-stone-400">Четкий контур бороды, распаривание, бритье шеи и уходовое масло</p>
+                    </div>
+                    <div class="text-right whitespace-nowrap pl-4">
+                        <span class="font-bebas text-2xl text-emerald-400">900 ₽</span>
+                        <span class="block text-[10px] text-stone-500">30 мин</span>
+                    </div>
+                </div>
+
+                <div class="urban-card p-5 rounded-xl flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bebas text-xl text-white uppercase tracking-wider">Hair Tattoo / Дизайн линий</h4>
+                        <p class="text-xs text-stone-400">Креативные геометрические полосы, узоры и кастомные рисунки</p>
+                    </div>
+                    <div class="text-right whitespace-nowrap pl-4">
+                        <span class="font-bebas text-2xl text-emerald-400">600 ₽</span>
+                        <span class="block text-[10px] text-stone-500">20 мин</span>
+                    </div>
+                </div>
+
+                <div class="urban-card p-5 rounded-xl flex items-center justify-between md:col-span-2 border-emerald-500/40">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h4 class="font-bebas text-2xl text-white uppercase tracking-wider">Full Drop (Стрижка + Борода + Маска)</h4>
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500 text-black uppercase">Хит</span>
+                        </div>
+                        <p class="text-xs text-stone-400">Полная перезагрузка: фейд любой сложности, оформление бороды и черная очищающая маска</p>
+                    </div>
+                    <div class="text-right whitespace-nowrap pl-4">
+                        <span class="text-xs line-through text-stone-500 block">2 900 ₽</span>
+                        <span class="font-bebas text-3xl text-emerald-400">2 200 ₽</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CREW -->
+    <section id="crew" class="py-20 border-b border-stone-800 bg-[#0e0f14]">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 px-3 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">Мастера</span>
+                <h2 class="text-3xl sm:text-4xl font-bebas font-bold uppercase text-white mt-3">Наше Крю</h2>
+                <p class="text-stone-400 text-sm max-w-md mx-auto mt-1">Никаких случайных людей. Только мастера, живущие уличной культурой и стилем.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="urban-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="h-60 rounded-xl overflow-hidden mb-4 relative">
+                            <img src="assets/barber_2.jpg" alt="Тим Blade" class="w-full h-full object-cover">
+                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-black/80 text-emerald-400 text-[10px] font-bold uppercase border border-emerald-500/40">Top Stylist • @tim_blade</span>
+                        </div>
+                        <h4 class="font-bebas text-2xl text-white uppercase">Тим "Blade"</h4>
+                        <p class="text-xs text-stone-400">Специалист по чистейшим Taper & Skin Fade, сложным текстурным кропам и узорам.</p>
+                    </div>
+                    <button onclick="openUrbanModal('Fresh Skin Fade', 'Тим Blade')" class="mt-6 w-full py-2.5 rounded-xl font-bebas text-base uppercase text-emerald-400 border border-emerald-500/40 hover:bg-emerald-500 hover:text-black transition-all">
+                        Записаться к Тиму
+                    </button>
+                </div>
+
+                <div class="urban-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="h-60 rounded-xl overflow-hidden mb-4 relative">
+                            <img src="assets/barber_1.jpg" alt="Никита Drift" class="w-full h-full object-cover">
+                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-black/80 text-emerald-400 text-[10px] font-bold uppercase border border-emerald-500/40">Fade Master • @nik_drift</span>
+                        </div>
+                        <h4 class="font-bebas text-2xl text-white uppercase">Никита "Drift"</h4>
+                        <p class="text-xs text-stone-400">Мастер кудрей, текстурных стрижек в стиле британского андеграунда и удлиненного стайлинга.</p>
+                    </div>
+                    <button onclick="openUrbanModal('Textured Crop', 'Никита Drift')" class="mt-6 w-full py-2.5 rounded-xl font-bebas text-base uppercase text-emerald-400 border border-emerald-500/40 hover:bg-emerald-500 hover:text-black transition-all">
+                        Записаться к Никите
+                    </button>
+                </div>
+
+                <div class="urban-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="h-60 rounded-xl overflow-hidden mb-4 relative">
+                            <img src="assets/barber_3.jpg" alt="Марк Sniper" class="w-full h-full object-cover">
+                            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-black/80 text-emerald-400 text-[10px] font-bold uppercase border border-emerald-500/40">Beard Boss • @mark_sniper</span>
+                        </div>
+                        <h4 class="font-bebas text-2xl text-white uppercase">Марк "Sniper"</h4>
+                        <p class="text-xs text-stone-400">Идеальные контуры бороды, филигранная работа шейвером и королевское распаривание.</p>
+                    </div>
+                    <button onclick="openUrbanModal('Beard Lineup', 'Марк Sniper')" class="mt-6 w-full py-2.5 rounded-xl font-bebas text-base uppercase text-emerald-400 border border-emerald-500/40 hover:bg-emerald-500 hover:text-black transition-all">
+                        Записаться к Марку
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section id="contacts" class="py-20 bg-[#090a0d]">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 px-3 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">Дропай к нам</span>
+                    <h2 class="text-4xl font-bebas font-bold uppercase text-white">Адрес CULT 13 в Краснодаре</h2>
+                    
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <span class="block text-xs text-stone-500 uppercase tracking-wider font-bold">Локация:</span>
+                            <span class="font-bold text-white text-base">г. Краснодар, Зиповская улица, 20</span>
+                            <span class="block text-xs text-stone-400 mt-0.5">Рядом с Чистяковской Рощей, парковка прямо у входа</span>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-stone-500 uppercase tracking-wider font-bold">Время работы:</span>
+                            <span class="font-bold text-white text-base">Каждый день с 10:00 до 21:00</span>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-stone-500 uppercase tracking-wider font-bold">Телефон / WhatsApp:</span>
+                            <a href="tel:+79880882424" class="font-bold text-emerald-400 text-lg hover:underline">+7 (988) 088-24-24</a>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="openUrbanModal('Fresh Skin Fade', 'Тим Blade')" class="px-8 py-3.5 rounded-xl font-bebas text-lg uppercase tracking-wider text-black bg-emerald-500 hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/25">
+                            Записаться онлайн (-300 ₽)
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="rounded-2xl overflow-hidden border border-emerald-500/30 shadow-2xl relative h-[360px] bg-stone-900">
+                        <img src="assets/interior_tools.jpg" alt="Интерьер CULT 13" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/85 backdrop-blur-md border border-stone-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-emerald-400 font-bold uppercase block">Как добраться:</span>
+                                <span class="text-sm font-bold text-white">Зиповская 20, вывеска с неоновой цифрой 13</span>
+                            </div>
+                            <a href="https://yandex.ru/maps/?text=Краснодар+Зиповская+20" target="_blank" class="text-xs font-bold text-emerald-400 hover:underline">Яндекс Карты →</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-8 border-t border-stone-900 text-xs text-stone-600">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <span class="font-bebas text-lg font-bold text-white uppercase tracking-wider">CULT 13 BARBERSHOP</span>
+            <span>© 2026 CULT 13. Streetwear Hair Culture. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- URBAN BOOKING MODAL -->
+    <div id="urban-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="urban-card w-full max-w-lg rounded-2xl p-6 sm:p-8 border border-emerald-500/40 relative shadow-2xl overflow-y-auto max-h-[90vh]">
+            <button onclick="closeUrbanModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white text-xl">✕</button>
+            
+            <div class="mb-6">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Быстрый букинг</span>
+                <h3 class="text-3xl font-bebas font-bold uppercase text-white mt-1">Запись в CULT 13</h3>
+                <p class="text-xs text-stone-400 mt-1">Зафиксируй скидку 300 ₽ на первый визит.</p>
+            </div>
+
+            <form onsubmit="handleUrbanSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1">Стрижка / Услуга</label>
+                    <input type="text" id="urban-service" class="w-full bg-stone-900 border border-stone-800 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-emerald-500 outline-none" required>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1">Мастер</label>
+                    <select id="urban-master" class="w-full bg-stone-900 border border-stone-800 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-emerald-500 outline-none">
+                        <option value="Тим Blade">Тим "Blade"</option>
+                        <option value="Никита Drift">Никита "Drift"</option>
+                        <option value="Марк Sniper">Марк "Sniper"</option>
+                        <option value="Любой свободный мастер">Любой свободный мастер (быстрее)</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1">День</label>
+                        <select id="urban-date" class="w-full bg-stone-900 border border-stone-800 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-emerald-500 outline-none">
+                            <option value="Сегодня">Сегодня</option>
+                            <option value="Завтра">Завтра</option>
+                            <option value="На выходных">На выходных</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1">Время</label>
+                        <select id="urban-time" class="w-full bg-stone-900 border border-stone-800 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-emerald-500 outline-none">
+                            <option value="12:00">12:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="16:30">16:30</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:30">19:30</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1">Твое имя / ник</label>
+                    <input type="text" id="urban-name" placeholder="Данил" class="w-full bg-stone-900 border border-stone-800 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-emerald-500 outline-none" required>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1">Телефон</label>
+                    <input type="tel" id="urban-phone" placeholder="+7 (999) 000-00-00" class="w-full bg-stone-900 border border-stone-800 text-white text-sm rounded-lg px-3.5 py-2.5 focus:border-emerald-500 outline-none" required>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-4 rounded-xl font-bebas text-xl uppercase tracking-wider text-black bg-emerald-500 hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/25">
+                        Подтвердить дроп
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JS Logic -->
+    <script>
+        function openUrbanModal(service, master) {
+            if(service) document.getElementById('urban-service').value = service;
+            if(master) document.getElementById('urban-master').value = master;
+            const modal = document.getElementById('urban-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeUrbanModal() {
+            const modal = document.getElementById('urban-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleUrbanSubmit(e) {
+            e.preventDefault();
+            const service = document.getElementById('urban-service').value;
+            const master = document.getElementById('urban-master').value;
+            const date = document.getElementById('urban-date').value;
+            const time = document.getElementById('urban-time').value;
+            const name = document.getElementById('urban-name').value;
+            const phone = document.getElementById('urban-phone').value;
+
+            const msg = `Йоу! Хочу записаться на ${service} к мастеру ${master} на ${date} в ${time}. Мой ник: ${name}, тел: ${phone}. Промокод: CULT30.`;
+            const waUrl = `https://wa.me/79880882424?text=${encodeURIComponent(msg)}`;
+            window.open(waUrl, '_blank');
+            closeUrbanModal();
+            alert('Заявка отправлена! Открываем WhatsApp для подтверждения времени.');
+        }
+
+        // Roulette Spin
+        function spinRoulette() {
+            const btn = document.getElementById('spin-btn');
+            const disp = document.getElementById('roulette-display');
+            btn.disabled = true;
+            btn.textContent = 'Крутится... 🔥';
+
+            const prizes = [
+                'СКИДКА 20% НА ПЕРВЫЙ ВИЗИТ',
+                'СТАЙЛИНГ ПУДРОЙ В ПОДАРОК',
+                'СКИДКА 30% НА КОМПЛЕКС СТРИЖКА + БОРОДА',
+                'ЧЕРНАЯ МАСКА БЕСПЛАТНО',
+                'СКИДКА 25% НА SKIN FADE'
+            ];
+
+            let count = 0;
+            const interval = setInterval(() => {
+                disp.textContent = prizes[Math.floor(Math.random() * prizes.length)];
+                count++;
+                if(count > 15) {
+                    clearInterval(interval);
+                    document.getElementById('roulette-box').classList.add('hidden');
+                    document.getElementById('roulette-result').classList.remove('hidden');
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>
